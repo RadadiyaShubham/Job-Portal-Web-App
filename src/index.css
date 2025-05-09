@@ -1,13 +1,119 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    ul, ol {
+        list-style: revert;
+        font-size: medium;
+    }
+    p {
+        font-size: medium;
+    }
+    li {
+        margin-left: 1em;
+    }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@keyframes progress-animation {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+
+.ring-progress {
+  animation: progress-animation 1.5s ease-out forwards;
+}
+
+.hover-scale {
+  transition: transform 0.2s ease-in-out;
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+.arrow-up {
+  transition: transform 0.3s ease;
+}
+
+.arrow-up:hover {
+  transform: translateY(-2px);
+}
+.stat-card {
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+.mantine-RingProgress-root {
+  transition: transform 0.3s ease;
+}
+
+.mantine-RingProgress-root:hover {
+  transform: scale(1.05);
+}
+
+.chart-bar {
+  transition: height 1s ease-out;
+  width: 100%;
+}
+
+.chart-bar-container {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.chart-bar-container:hover .chart-bar {
+  filter: brightness(1.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.grid-line {
+  opacity: 0;
+  animation: gridFadeIn 1s ease-out forwards;
+}
+
+@keyframes gridFadeIn {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  to {
+    opacity: 0.2;
+    transform: scaleX(1);
+  }
+}
+
+.chart-bar-container:nth-child(1) { animation-delay: 0.1s; }
+.chart-bar-container:nth-child(2) { animation-delay: 0.2s; }
+.chart-bar-container:nth-child(3) { animation-delay: 0.3s; }
+.chart-bar-container:nth-child(4) { animation-delay: 0.4s; }
+.chart-bar-container:nth-child(5) { animation-delay: 0.5s; }
+.chart-bar-container:nth-child(6) { animation-delay: 0.6s; }
+.chart-bar-container:nth-child(7) { animation-delay: 0.7s; }
+.chart-bar-container:nth-child(8) { animation-delay: 0.8s; }
+.chart-bar-container:nth-child(9) { animation-delay: 0.9s; }
+.chart-bar-container:nth-child(10) { animation-delay: 1s; }
+.chart-bar-container:nth-child(11) { animation-delay: 1.1s; }
+.chart-bar-container:nth-child(12) { animation-delay: 1.2s; }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 0.2; }
+}
+
+.border-gray-700 {
+  animation: fadeIn 1s ease-out forwards;
 }
